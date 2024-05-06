@@ -9,3 +9,8 @@
 <p>JS</p>
 <p>NODEJS</p>
 <p>IA</p>
+
+<h1>Projeto</h1>
+
+
+![Screenshot_2](https://github.com/artur-debv/Shorts/assets/97331300/e0aea73d-bd56-4ead-9f21-7ee510f0722d)
