@@ -1,4 +1,4 @@
-import { transcribeExample } from "./utils/transcribeExample.js"; // Exemplo de transcrição estática
+import { transcribeExample } from "./utils/transcription"; // Exemplo de transcrição estática
 
 export async function transcribe(audioFilePath, useExample = false) {
   try {
