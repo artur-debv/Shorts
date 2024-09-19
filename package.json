@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "start": "npm run dev",
-  "build": "vite build",
-  "dev": "concurrently \"npm run server\" \"npm run web\"",
-  "server": "node --watch --no-warnings server/index.js",
-  "web": "vite"
-},
+  "scripts": {
+    "start": "npm run dev",
+    "build": "vite build",
+    "dev": "concurrently \"npm run server\" \"npm run web\"",
+    "server": "node --watch --no-warnings server/index.js",
+    "web": "vite"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
@@ -24,6 +24,6 @@
     "ffmpeg-static": "^5.2.0",
     "fluent-ffmpeg": "^2.1.2",
     "node-wav": "^0.0.2",
-    "ytdl-core": "4.10.0"
+    "ytdl-core": "^4.11.5"
   }
 }
