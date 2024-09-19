@@ -1,4 +1,4 @@
-/*import { Transcription } from "./utils/transcription"; // Exemplo de transcrição estática
+import { Transcription } from "./utils/transcription.js"; // Verifique o caminho correto para o exemplo de transcrição
 
 export async function transcribe(audioFilePath, useExample = false) {
   try {
@@ -12,6 +12,7 @@ export async function transcribe(audioFilePath, useExample = false) {
 
     // Aqui você incluiria a lógica para transcrever o arquivo de áudio
     // Por exemplo, utilizar uma API ou um serviço de transcrição
+    // Certifique-se de implementar a função someTranscriptionService
 
     const transcribedText = await someTranscriptionService(audioFilePath);
 
@@ -21,4 +22,4 @@ export async function transcribe(audioFilePath, useExample = false) {
     console.log("Erro ao realizar transcrição, retornando exemplo de transcrição", error);
     return Transcription; // Retorna o exemplo estático em caso de erro
   }
-}*/
+}
