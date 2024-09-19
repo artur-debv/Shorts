@@ -1,13 +1,9 @@
-
-import dotenv from 'dotenv';
-dotenv.config();
-
 import cors from "cors"
 import express from "express"
 
 import { convert } from "./convert.js"
 import { download } from "./download.js"
-import { transcribeExample } from "./utils/transcribeExample.js"; // Exemplo de transcrição estática
+import { transcribe } from "./transcribe.js"
 import { summarize } from "./summarize.js"
 
 const app = express()
