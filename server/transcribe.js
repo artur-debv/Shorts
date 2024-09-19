@@ -1,27 +1,24 @@
-import { pipeline } from "@xenova/transformers";
-import { summaryExample } from "./utils/summary.js";
+import { transcribeExample } from "./utils/transcribeExample.js"; // Exemplo de transcrição estática
 
-export async function summarize(text, useExample = false) {
+export async function transcribe(audioFilePath, useExample = false) {
   try {
-    // Verifica se devemos usar o exemplo de resumo estático
+    // Verifica se devemos usar o exemplo de transcrição estática
     if (useExample) {
-      console.log("Usando exemplo de resumo...");
-      return summaryExample;
+      console.log("Usando exemplo de transcrição...");
+      return transcribeExample; // Retorna o exemplo de transcrição
     }
 
-    console.log("Realizando o resumo...");
+    console.log("Iniciando transcrição do áudio...");
 
-    const generator = await pipeline(
-      "summarization",
-      "Xenova/distilbart-cnn-12-6"
-    );
+    // Aqui você incluiria a lógica para transcrever o arquivo de áudio
+    // Por exemplo, utilizar uma API ou um serviço de transcrição
 
-    const output = await generator(text);
+    const transcribedText = await someTranscriptionService(audioFilePath);
 
-    console.log("Resumo concluído com sucesso!");
-    return output[0].summary_text;
+    console.log("Transcrição concluída com sucesso!");
+    return transcribedText;
   } catch (error) {
-    console.log("Não foi possível realizar o resumo, retornando exemplo de resumo", error);
-    return summaryExample;
+    console.log("Erro ao realizar transcrição, retornando exemplo de transcrição", error);
+    return transcribeExample; // Retorna o exemplo estático em caso de erro
   }
 }
