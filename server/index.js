@@ -7,7 +7,7 @@ import express from "express"
 
 import { convert } from "./convert.js"
 import { download } from "./download.js"
-import { transcribe } from "./transcribe.js"
+import { transcribeExample } from "./utils/transcribeExample.js"; // Exemplo de transcrição estática
 import { summarize } from "./summarize.js"
 
 const app = express()
