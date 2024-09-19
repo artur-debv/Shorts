@@ -1,28 +1,27 @@
-import { pipeline } from "@xenova/transformers"
+import { pipeline } from "@xenova/transformers";
+import { summaryExample } from "./utils/summary.js";
 
-import { transcriptionExample } from "./utils/transcription.js"
-
-export async function transcribe(audio) {
+export async function summarize(text, useExample = false) {
   try {
-    // return transcriptionExample
+    // Verifica se devemos usar o exemplo de resumo estático
+    if (useExample) {
+      console.log("Usando exemplo de resumo...");
+      return summaryExample;
+    }
 
-    console.log("Realizando a transcrisão...")
+    console.log("Realizando o resumo...");
 
-    const transcribe = await pipeline(
-      "automatic-speech-recognition",
-      "Xenova/whisper-small"
-    )
+    const generator = await pipeline(
+      "summarization",
+      "Xenova/distilbart-cnn-12-6"
+    );
 
-    const transcription = await transcribe(audio, {
-      chunk_length_s: 30,
-      stride_length_s: 5,
-      language: "portuguese",
-      task: "transcribe",
-    })
+    const output = await generator(text);
 
-    console.log("Transcrição finalizada com sucesso.")
-    return transcription?.text.replace("[Música]", "")
+    console.log("Resumo concluído com sucesso!");
+    return output[0].summary_text;
   } catch (error) {
-    throw new Error(error)
+    console.log("Não foi possível realizar o resumo, retornando exemplo de resumo", error);
+    return summaryExample;
   }
 }
