@@ -13,11 +13,11 @@ export async function summarize(text) {
       "Xenova/distilbart-cnn-12-6"
     )
 
-    const output = await generator(text)
-
     console.log("Resumo concluído com sucesso!")
     console.log(output[0].summary_text)
     console.log(output[0])
+    console.log(text)
+    const output = await generator(text)
     return output[0].summary_text
   } catch (error) {
     console.log("Não foi possível realizar o resumo", error)
