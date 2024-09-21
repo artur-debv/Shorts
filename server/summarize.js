@@ -17,6 +17,7 @@ export async function summarize(text) {
 
     console.log("Resumo concluído com sucesso!")
     console.log(output[0].summary_text)
+    console.log(output[0])
     return output[0].summary_text
   } catch (error) {
     console.log("Não foi possível realizar o resumo", error)
